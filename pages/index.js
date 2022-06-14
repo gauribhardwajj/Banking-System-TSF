@@ -1,9 +1,23 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 import { getusers } from "../utils/request";
 
-const Home = ({ users }) => {
+const Home = () => {
   const router = useRouter();
+  const [users, setUsers] = useState(null);
+  const [isMounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    const getUserData = async () => {
+      const users = await getusers();
+      setUsers(users);
+      setMounted(true);
+    };
+    getUserData();
+  }, []);
+
+  if (!isMounted) return null;
 
   return (
     <div className="min-h-screen w-full bg-slate-50 text-slate-900 antialiased">
