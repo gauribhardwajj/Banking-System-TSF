@@ -29,7 +29,7 @@ export const createuser = async (payload) => {
 
 export const getusers = async () => {
   try {
-    const res = await axios.get(`${server}/api/user`);
+    const res = await axios.get(`/api/user`);
     return res.data;
   } catch (error) {
     const errorMsg = getValue(error, ["response", "data"]);
@@ -39,7 +39,7 @@ export const getusers = async () => {
 
 export const getuser = async (id) => {
   try {
-    const res = await axios.get(`${server}/api/user/${id}`);
+    const res = await axios.get(`/api/user/${id}`);
     return res.data;
   } catch (error) {
     const errorMsg = getValue(error, ["response", "data"]);
@@ -49,7 +49,7 @@ export const getuser = async (id) => {
 
 export const sendmoney = async (payload) => {
   try {
-    const res = await axios.put(`${server}/api/transferMoney`, payload);
+    const res = await axios.put(`/api/transferMoney`, payload);
     return res.data;
   } catch (error) {
     const errorMsg = getValue(error, ["response", "data"]);

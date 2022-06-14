@@ -79,10 +79,10 @@ const Home = () => {
 
 export default Home;
 
-export async function getServerSideProps(context) {
-  const users = await getusers();
+// export async function getServerSideProps(context) {
+//   const users = await getusers();
 
-  return {
-    props: { users },
-  };
-}
+//   return {
+//     props: { users },
+//   };
+// }
