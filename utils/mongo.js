@@ -24,11 +24,18 @@ async function dbConnect() {
       bufferCommands: false,
     };
 
-    cached.promise = mongoose.connect(MONGO_URL, opts).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose
+      .connect(MONGO_URL, opts)
+      .then((mongoose) => {
+        return mongoose;
+      })
+      .catch((e) => console.log(e));
   }
-  cached.conn = await cached.promise;
+  try {
+    cached.conn = await cached.promise;
+  } catch (error) {
+    console.log(error);
+  }
   return cached.conn;
 }
 
