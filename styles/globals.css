@@ -33,6 +33,9 @@
   .link {
     @apply cursor-pointer select-none text-blue-500 transition-all hover:text-purple-400 hover:underline;
   }
+  .active {
+    @apply border-[0.2px] border-fuchsia-400 shadow-inner rounded-md p-2;
+  }
   .input {
     @apply w-full rounded-md border-2 bg-slate-50 p-2 px-3 text-gray-600 outline-none focus-within:shadow-md;
   }

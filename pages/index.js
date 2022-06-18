@@ -1,88 +1,53 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
-import { getusers } from "../utils/request";
 
-const Home = () => {
+function Home() {
   const router = useRouter();
-  const [users, setUsers] = useState(null);
-  const [isMounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    const getUserData = async () => {
-      const users = await getusers();
-      setUsers(users);
-      setMounted(true);
-    };
-    getUserData();
-  }, []);
-
-  if (!isMounted) return null;
 
   return (
-    <div className="min-h-screen w-full bg-slate-50 text-slate-900 antialiased">
+    <div className="bg-home bg-cover bg-center h-screen overflow-hidden text-white">
       <Head>
-        <title>Banking System</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>The Saprks Banking System</title>
+        <link rel="icon" href="/1logo.png" />
       </Head>
 
-      <main className="mx-auto flex h-full w-screen items-center justify-between px-5 md:max-w-screen-2xl md:px-0 xl:max-w-screen-xl">
-        <div className="w-full py-5">
-          <section className="relative mx-auto flex w-full max-w-screen-md flex-col items-center gap-y-8 gap-x-16 border-[0.2px] bg-white p-11 shadow-sm">
-            <div className="ml-auto">
-              <button
-                onClick={() => router.push("/transferMoney")}
-                className="ml-auto rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-white hover:text-slate-900 hover:ring-2 hover:ring-black cursor-pointer text-center"
-              >
-                Transfer Money
-              </button>
-            </div>
-            <table className="table-auto mx-auto bg-white border-[0.2px] shadow-sm w-full max-w-screen-md">
-              <thead>
-                <tr className="p-5 grid grid-cols-3 justify-items-start w-full bg-gray-100 text-xs md:text-base">
-                  <th className="capitalize">Name</th>
-                  <th className="capitalize">Email</th>
-                  <th className="capitalize">Current Balance</th>
-                </tr>
-              </thead>
-              <tbody className="">
-                {users?.data?.length > 0 ? (
-                  users?.data?.map((user) => (
-                    <tr
-                      key={user._id}
-                      className="p-5 grid grid-cols-3 justify-items-start w-full text-xs md:text-base"
-                    >
-                      <td
-                        onClick={() => router.push(`/${user._id}`)}
-                        key={user._id}
-                        className="link"
-                      >
-                        {user.name}
-                      </td>
-                      <td>{user.email}</td>
-                      <td>{user.currentBalance}</td>
-                    </tr>
-                  ))
-                ) : (
-                  <tr className="p-5 grid place-items-center w-full text-xs md:text-base">
-                    <td className="text-3xl font-medium">No Classes Found</td>
-                  </tr>
-                )}
-              </tbody>
-            </table>
-          </section>
+      <div className="max-w-7xl p-2 md:p-5 flex flex-col md:flex-row justify-center md:justify-between items-center m-auto my-auto h-full">
+        <div className="">
+          <h1 class="text-2xl text-center md:text-left md:text-8xl font-black w-96 leading-tight text-white">
+            <span class="bg-gradient-to-r text-transparent bg-clip-text from-purple-600 via-rose-600 to-pink-700">
+              The Sparks Banking
+            </span>
+          </h1>
         </div>
-      </main>
+        <ul className="list-disc flex flex-col items-start gap-y-2">
+          <li
+            onClick={() => router.push("/createUser")}
+            className="link text-sm md:text-xl text-white hover:underline hover:text-gray-200"
+          >
+            Create User
+          </li>
+          <li
+            onClick={() => router.push("/users")}
+            className="link text-sm md:text-xl text-white hover:underline hover:text-gray-200"
+          >
+            Users
+          </li>
+          <li
+            onClick={() => router.push("/transferMoney")}
+            className="link text-sm md:text-xl text-white hover:underline hover:text-gray-200"
+          >
+            Transfer Money
+          </li>
+          <li
+            onClick={() => router.push("/")}
+            className="link text-sm md:text-xl text-white hover:underline hover:text-gray-200"
+          >
+            Transaction History
+          </li>
+        </ul>
+      </div>
     </div>
   );
-};
+}
 
 export default Home;
-
-// export async function getServerSideProps(context) {
-//   const users = await getusers();
-
-//   return {
-//     props: { users },
-//   };
-// }

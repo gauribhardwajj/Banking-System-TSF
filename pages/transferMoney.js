@@ -2,6 +2,7 @@ import { useState } from "react";
 import { getusers, sendmoney } from "../utils/request";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import Navbar from "../components/Navbar";
 
 function TransferMoney({ users }) {
   const router = useRouter();
@@ -67,6 +68,8 @@ function TransferMoney({ users }) {
         <title>Transfer Money</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <Navbar />
 
       <main className="mx-auto flex h-full w-screen items-center justify-between px-5 md:max-w-screen-2xl md:px-0 xl:max-w-screen-xl">
         <div className="w-full py-5">
