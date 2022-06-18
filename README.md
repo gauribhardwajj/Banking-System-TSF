@@ -5,8 +5,11 @@ This task is to create a banking management system, where we use mongodb as data
 It has several pages that includes
 
 / ---> path to home
+
 /:id ---> path to user information
+
 /transferMoney ---> path to tranfer money page
+
 /createUser ---> path to create demo user
 
 ## How to install and use
