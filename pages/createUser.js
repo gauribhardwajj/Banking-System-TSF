@@ -40,18 +40,18 @@ function CreateUser() {
   return (
     <div className="min-h-screen w-full bg-slate-50 text-slate-900 antialiased">
       <Head>
-        <title>Banking System</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Add-User</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Navbar />
 
-      <div className="grid place-items-center mt-24">
+      <div className="grid place-items-center mt-12">
         <form
           onSubmit={createUser}
           className="mx-5 flex flex-col space-y-5 rounded-md bg-white p-11 shadow-md md:w-1/2 xl:w-1/3 2xl:w-1/4"
         >
-          <h1 className="text-2xl text-center">Create user</h1>
+          <h1 className="text-2xl text-center">Register New User</h1>
           {errorMessage && (
             <p className="mb-5 text-center text-sm font-semibold capitalize text-red-500">
               {errorMessage}
@@ -100,10 +100,10 @@ function CreateUser() {
           </div>
 
           <button
-            className="rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-white hover:text-slate-900 hover:ring-2 hover:ring-black cursor-pointer text-center"
+            className="rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-purple-500 hover:text-white hover:ring-2 hover:ring-purple-500 cursor-pointer text-center"
             type="submit"
           >
-            Create
+            Add User
           </button>
         </form>
       </div>

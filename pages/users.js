@@ -10,8 +10,8 @@ const Users = ({ users }) => {
   return (
     <div className="min-h-screen w-full bg-slate-50 text-slate-900 antialiased">
       <Head>
-        <title>Banking System</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>All-Users</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Navbar />
@@ -22,7 +22,7 @@ const Users = ({ users }) => {
             <div className="ml-auto">
               <button
                 onClick={() => router.push("/transferMoney")}
-                className="ml-auto rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-white hover:text-slate-900 hover:ring-2 hover:ring-black cursor-pointer text-center"
+                className="ml-auto rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-purple-500 hover:text-white hover:ring-2 hover:ring-purple-500 cursor-pointer text-center"
               >
                 Transfer Money
               </button>
@@ -31,7 +31,7 @@ const Users = ({ users }) => {
               <thead>
                 <tr className="p-5 grid grid-cols-3 justify-items-start w-full bg-gray-100 text-xs md:text-base">
                   <th className="capitalize">Name</th>
-                  <th className="capitalize">Email</th>
+                  <th className="capitalize hidden lg:block md:block">Email</th>
                   <th className="capitalize">Current Balance</th>
                 </tr>
               </thead>
@@ -49,7 +49,7 @@ const Users = ({ users }) => {
                       >
                         {user.name}
                       </td>
-                      <td>{user.email}</td>
+                      <td className="hidden lg:block md:block">{user.email}</td>
                       <td>{user.currentBalance}</td>
                     </tr>
                   ))

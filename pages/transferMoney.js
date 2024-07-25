@@ -65,8 +65,8 @@ function TransferMoney({ users }) {
   return (
     <div className="min-h-screen w-full bg-slate-50 text-slate-900 antialiased">
       <Head>
-        <title>Transfer Money</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Transfer-Money</title>
+        <link rel="icon" href="/favicon.png" />
       </Head>
 
       <Navbar />
@@ -152,7 +152,7 @@ function TransferMoney({ users }) {
 
               <button
                 type="submit"
-                className="w-full mt-4 rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-white hover:text-slate-900 hover:ring-2 hover:ring-black cursor-pointer text-center"
+                className="w-full mt-4 rounded-md bg-black p-2 px-3 font-semibold uppercase text-slate-100 transition-all hover:bg-purple-500 hover:text-white hover:ring-2 hover:ring-purple-500 cursor-pointer text-center"
               >
                 Send
               </button>
