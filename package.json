@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "axios": "^1.7.2",
+    "dotenv": "^16.4.5",
     "mongodb": "^4.17.2",
     "mongoose": "^6.3.5",
     "next": "latest",
@@ -18,5 +19,5 @@
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24"
   },
-  "license": "UNLICENSED"  
+  "license": "UNLICENSED"
 }
